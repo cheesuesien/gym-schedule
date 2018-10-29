@@ -9,7 +9,7 @@ class DateInput extends Component {
 		$(document).ready(() => {
 			$('.datepicker').datepicker({
 				format: "dd/mm/yyyy",
-				startDate: "-3d",
+				startDate: "-1d",
 				endDate: "+14d",
 				maxViewMode: 1,
 				todayBtn: "linked",

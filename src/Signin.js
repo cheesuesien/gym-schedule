@@ -10,6 +10,7 @@ class Signin extends React.Component {
     }
   }
 
+  //TODO: Try [name] : value
   onEmailChange = (event) => {
     this.setState({signInEmail: event.target.value})
   }
@@ -19,8 +20,8 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-	  /*
-    fetch('http://localhost:3000/signin', {
+	  
+    fetch('http://localhost:3001/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -30,12 +31,14 @@ class Signin extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
-        if (user.id) {
+        if (user.email) {
           this.props.loadUser(user);
           this.props.signIn(this.props.isSignedIn);
+          if (user.admin) {
+            this.props.adminSignIn(this.props.isAdmin);
+          }
         }
-      })*/
-	  this.props.signIn(this.props.isSignedIn);
+      })
   }
 
   
@@ -45,7 +48,14 @@ class Signin extends React.Component {
 			<legend>Sign In</legend>
 			<div className="form-group">
 				<label htmlFor="exampleInputEmail1">Email address</label>
-				<input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.onEmailChange}/>
+				<input 
+          type="email" 
+          className="form-control" 
+          id="exampleInputEmail1" 
+          aria-describedby="emailHelp" 
+          placeholder="Enter email" 
+          onChange={this.onEmailChange}
+        />
 			</div>
 			<div className="form-group">
 				<label htmlFor="exampleInputPassword1">Password</label>
