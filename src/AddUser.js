@@ -18,7 +18,7 @@ class AddUser extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3001/adduser', {
+    fetch('https://gym-schedule-api.herokuapp.com/adduser', {
       method: 'put',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

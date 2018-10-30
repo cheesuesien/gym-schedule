@@ -46,7 +46,7 @@ class Table extends Component {
 			}
 		}
 
-		fetch('http://localhost:3001/dayview', {
+		fetch('https://gym-schedule-api.herokuapp.com/dayview', {
       method: 'POST',
       body: JSON.stringify({date: moment(this.props.date).format()}),
       headers: {'Content-Type': 'application/json'},
@@ -96,7 +96,7 @@ class Table extends Component {
 					e.target.removeChild(e.target.childNodes[0]);
 					e.target.classList.toggle("table-light");	
 					e.target.classList.toggle("table-success");
-					fetch('http://localhost:3001/bookslot', {
+					fetch('https://gym-schedule-api.herokuapp.com/bookslot', {
 			      method: 'DELETE',
 			      body: JSON.stringify({
 			      	date: moment(this.props.date).format(),
@@ -119,7 +119,7 @@ class Table extends Component {
 			e.target.classList.toggle("table-light");	
 			e.target.classList.toggle("table-success");
 
-			fetch('http://localhost:3001/bookslot', {
+			fetch('https://gym-schedule-api.herokuapp.com/bookslot', {
 	      method: 'PUT',
 	      body: JSON.stringify({
 	      	date: moment(this.props.date).format(),
